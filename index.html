@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bat Ball Stump Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🏏 Bat Ball Stump Game</h1>
+
+    <div class="buttons">
+      <button onclick="playGame('Bat')">🏏 Bat</button>
+      <button onclick="playGame('Ball')">🏐 Ball</button>
+      <button onclick="playGame('Stump')">🧱 Stump</button>
+    </div>
+
+    <div class="result-container" id="resultBox">
+      <span id="userChoice"></span>
+      <span id="computerChoice"></span>
+      <span id="resultMsg"></span>
+    </div>
+
+    <div class="scoreboard">
+      <span>👤 You: <span id="userScore">0</span></span>
+      <span>🤖 Computer: <span id="computerScore">0</span></span>
+      <span>⚖️ Ties: <span id="tieScore">0</span></span>
+    </div>
+
+    <button id="resetBtn" onclick="resetScore()">🔁 Reset Score</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

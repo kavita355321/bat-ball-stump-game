@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #b2fefa, #0ed2f7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  text-align: center;
+  padding: 40px;
+  width: 90%;
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.buttons {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.buttons button {
+  margin: 10px;
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 12px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1 1 120px;
+  max-width: 180px;
+}
+
+.buttons button:hover {
+  transform: scale(1.05);
+  background-color: #0056b3;
+}
+
+#resetBtn {
+  background-color: #dc3545;
+}
+
+#resetBtn:hover {
+  background-color: #bb2d3b;
+}
+
+.result-container {
+  margin-top: 30px;
+  padding: 20px;
+  background: #ffffffdd;
+  border-radius: 15px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.result-container.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.result-container span {
+  display: block;
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: #111;
+}
+
+.scoreboard {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #222;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.scoreboard span {
+  padding: 5px 15px;
+  background: #e1f5fe;
+  border-radius: 8px;
+}
+
+#resetBtn {
+  margin-top: 25px;
+  padding: 10px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  transition: 0.3s ease;
+}
+
+/* 👇 Responsive Styles 👇 */
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .buttons button {
+    font-size: 16px;
+    padding: 12px 20px;
+    flex: 1 1 100%;
+  }
+
+  .result-container span {
+    font-size: 1rem;
+  }
+
+  .scoreboard {
+    font-size: 1rem;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  #resetBtn {
+    width: 100%;
+    font-size: 15px;
+  }
+}
