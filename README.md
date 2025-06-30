@@ -23,7 +23,7 @@ A fun, interactive browser-based game where you play Bat-Ball-Stump against the 
 - 📱 Fully mobile-responsive layout
 - 🚀 Deployed with GitHub Pages
 
-## 📸 Preview
+## 📸 Screenshort
 
 ![Bat Ball Stump Screenshot](https://github.com/kavita355321/bat-ball-stump-game/blob/main/screenshort.png?raw=true)
 
@@ -33,6 +33,8 @@ bat-ball-stump-game/
 - index.html        → Main HTML file
 - style.css         → Styling
 - script.js         → JavaScript game logic
+- screenshort.png   → screenshort
+- README.md         → this file 
 
 ## 🛠️ Technologies Used
 
