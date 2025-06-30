@@ -25,7 +25,7 @@ A fun, interactive browser-based game where you play Bat-Ball-Stump against the 
 
 ## 📸 Preview
 
-![Bat Ball Stump Screenshot](https://user-images.githubusercontent.com/YOUR-USERNAME/YOUR-REPO/image.png) 
+![Bat Ball Stump Screenshot](https://github.com/kavita355321/bat-ball-stump-game/blob/main/screenshort.png?raw=true)
 
 ## 📂 Project Structure
 
@@ -41,6 +41,10 @@ bat-ball-stump-game/
 - CSS3
 - JavaScript 
 
-## 🙋‍♀️ Created By
+## 👩‍💻 About Me
 
-**Kavita** – Computer Science graduate & aspiring Frontend / Data Analyst
+**Kavita** 
+💼 BSc Hons. Computer Science | Delhi University  
+📫 Email: kavita355321@gmail.com  
+📍 New Delhi, India
+
