@@ -30,10 +30,9 @@ A fun, interactive browser-based game where you play Bat-Ball-Stump against the 
 ## 📂 Project Structure
 
 bat-ball-stump-game/
-│
-├── index.html # Main HTML file
-├── style.css # Styling and responsiveness
-└── script.js # Game logic and interaction
+- index.html        → Main HTML file
+- style.css         → Styling
+- script.js         → JavaScript game logic
 
 ## 🛠️ Technologies Used
 
