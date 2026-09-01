@@ -1,36 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bat Ball Stump Game</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="container">
-    <h1>🏏 Bat Ball Stump Game</h1>
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Crease Clash is an accessible cricket decision game with match strategy, adaptive play and tested JavaScript logic." />
+    <meta name="theme-color" content="#10271d" />
+    <title>Crease Clash | Cricket decision game</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script type="module" src="js/app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#game">Skip to game</a>
+    <header>
+      <a class="brand" href="#top"><span aria-hidden="true">CC</span><strong>CREASE CLASH</strong></a>
+      <button id="open-rules" type="button">How to play</button>
+    </header>
 
-    <div class="buttons">
-      <button onclick="playGame('Bat')">🏏 Bat</button>
-      <button onclick="playGame('Ball')">🏐 Ball</button>
-      <button onclick="playGame('Stump')">🧱 Stump</button>
-    </div>
+    <main id="top">
+      <section class="intro">
+        <p class="eyebrow">Cricket strategy · Browser game</p>
+        <h1>Read the play.<br />Win the point.</h1>
+        <p>Bat, Ball and Stump reimagined as a complete match—with adaptive computer strategy, score targets and local performance history.</p>
+        <dl><div><dt>1</dt><dd>Bat beats Ball</dd></div><div><dt>2</dt><dd>Ball beats Stump</dd></div><div><dt>3</dt><dd>Stump beats Bat</dd></div></dl>
+      </section>
 
-    <div class="result-container" id="resultBox">
-      <span id="userChoice"></span>
-      <span id="computerChoice"></span>
-      <span id="resultMsg"></span>
-    </div>
+      <section class="game" id="game" aria-labelledby="game-title">
+        <div class="game-header">
+          <div><p class="eyebrow">Live match</p><h2 id="game-title">The Oval</h2></div>
+          <div class="settings">
+            <label for="target">Match<select id="target"><option value="3">First to 3</option><option value="5">First to 5</option></select></label>
+            <label for="difficulty">Computer<select id="difficulty"><option value="balanced">Balanced</option><option value="adaptive">Adaptive</option></select></label>
+          </div>
+        </div>
 
-    <div class="scoreboard">
-      <span>👤 You: <span id="userScore">0</span></span>
-      <span>🤖 Computer: <span id="computerScore">0</span></span>
-      <span>⚖️ Ties: <span id="tieScore">0</span></span>
-    </div>
+        <div class="scoreboard" aria-label="Match score">
+          <div><span>You</span><strong id="player-score">0</strong><div class="progress"><i id="player-progress"></i></div></div>
+          <div class="round-marker"><span>Round</span><strong id="round-number">1</strong><small>Ties: <span id="ties">0</span></small></div>
+          <div><span>Computer</span><strong id="computer-score">0</strong><div class="progress"><i id="computer-progress"></i></div></div>
+        </div>
 
-    <button id="resetBtn" onclick="resetScore()">🔁 Reset Score</button>
-  </div>
+        <div class="pitch" aria-live="polite" aria-atomic="true">
+          <div class="crease-line"></div>
+          <div class="choice-display"><span>Your play</span><strong id="player-choice">—</strong></div>
+          <div class="versus">VS</div>
+          <div class="choice-display"><span>Computer</span><strong id="computer-choice">—</strong></div>
+        </div>
 
-  <script src="script.js"></script>
-</body>
+        <div class="commentary"><strong id="round-message">Choose your play to begin.</strong><p id="match-message">First to 3 points wins.</p></div>
+
+        <div class="choices" aria-label="Choose your play">
+          <button type="button" data-choice="bat"><span aria-hidden="true" class="choice-icon bat-icon"></span><strong>Bat</strong><small>Key 1</small></button>
+          <button type="button" data-choice="ball"><span aria-hidden="true" class="choice-icon ball-icon"></span><strong>Ball</strong><small>Key 2</small></button>
+          <button type="button" data-choice="stump"><span aria-hidden="true" class="choice-icon stump-icon"></span><strong>Stump</strong><small>Key 3</small></button>
+        </div>
+        <button class="new-match" id="new-match" type="button">Start new match</button>
+      </section>
+
+      <aside class="history" aria-labelledby="history-title">
+        <p class="eyebrow">This device</p><h2 id="history-title">Match record</h2>
+        <div class="career-stats"><div><strong id="stats-played">0</strong><span>Played</span></div><div><strong id="stats-won">0</strong><span>Won</span></div><div><strong id="stats-lost">0</strong><span>Lost</span></div></div>
+        <ol id="match-history"></ol>
+      </aside>
+    </main>
+
+    <section class="engineering"><div><p class="eyebrow">Under the hood</p><h2>A small game with real state design.</h2></div><div><p>The match engine is separated from the interface, uses immutable state updates and accepts deterministic random values for reliable testing.</p><dl><div><dt>Game mode</dt><dd>Balanced or adaptive</dd></div><div><dt>Persistence</dt><dd>Local match history</dd></div><div><dt>Testing</dt><dd>10 automated logic checks</dd></div></dl></div></section>
+    <footer><a class="brand" href="#top"><span aria-hidden="true">CC</span><strong>CREASE CLASH</strong></a><p>JavaScript portfolio project by Kavita.</p><p>© <span id="year"></span></p></footer>
+
+    <dialog id="rules-dialog" aria-labelledby="rules-title"><div class="dialog-header"><div><p class="eyebrow">Rules</p><h2 id="rules-title">How to play</h2></div><button id="close-rules" type="button" aria-label="Close rules">×</button></div><ol><li><strong>Bat beats Ball</strong> by scoring the delivery.</li><li><strong>Ball beats Stump</strong> by breaking the wicket.</li><li><strong>Stump beats Bat</strong> through a dismissal.</li><li>Matching choices are a tie and award no point.</li><li>The first player to the selected target wins.</li></ol><p>Adaptive mode studies your earlier choices within the current match. It never sends or stores personal data.</p></dialog>
+  </body>
 </html>
+

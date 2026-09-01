@@ -1,0 +1,15 @@
+{
+  "name": "crease-clash",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Accessible cricket decision game with tested JavaScript logic",
+  "scripts": {
+    "test": "node --test",
+    "check": "npm test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
+

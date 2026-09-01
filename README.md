@@ -1,51 +1,91 @@
-# 🏏 Bat Ball Stump Game
+# Crease Clash — cricket decision game
 
-A fun, interactive browser-based game where you play Bat-Ball-Stump against the computer. Built using **HTML**, **CSS**, and **JavaScript** with a **responsive design** and deployed on **GitHub Pages**.
+[![Quality checks](https://github.com/kavita355321/bat-ball-stump-game/actions/workflows/quality.yml/badge.svg)](https://github.com/kavita355321/bat-ball-stump-game/actions/workflows/quality.yml)
 
-## 🎮 Game Rules
+Crease Clash is an accessible browser strategy game built with semantic HTML, modern CSS and vanilla JavaScript. It evolves the original Bat–Ball–Stump exercise into a complete match experience with score targets, balanced and adaptive computer modes, keyboard controls, persistent records and independently tested game logic.
 
-- You and the computer choose between:
-  - 🏏 Bat
-  - 🏐 Ball
-  - 🧱 Stump
-- The winner is determined based on these rules:
-  - Bat beats Ball
-  - Ball beats Stump
-  - Stump beats Bat
-  - Same choices = Tie
+## Rules
 
-## ✨ Features
+- **Bat beats Ball** by scoring the delivery
+- **Ball beats Stump** by breaking the wicket
+- **Stump beats Bat** through a dismissal
+- Matching choices are a tie and award no point
+- The first player to three or five points wins the match
 
-- 🎯 Real-time result display
-- 🧮 Live scoreboard (User, Computer, Tie)
-- 🔁 Reset score functionality
-- ⚡ Smooth animations and emojis
-- 📱 Fully mobile-responsive layout
-- 🚀 Deployed with GitHub Pages
+## Features
 
-## 📸 Screenshort
+- First-to-three and first-to-five match modes
+- Balanced random computer or adaptive strategy
+- Live score, round count, tie count and progress indicators
+- Complete match ending and restart flow
+- Local win/loss history and career summary
+- Keyboard shortcuts: `1` for Bat, `2` for Ball and `3` for Stump
+- Accessible rules dialog and live commentary
+- Responsive pitch-inspired interface with reduced-motion support
+- Immutable game state and deterministic random injection for testing
+- Automated GitHub Actions quality checks
 
-![Bat Ball Stump Screenshot](https://github.com/kavita355321/bat-ball-stump-game/blob/main/screenshort.png?raw=true)
+## Technical decisions
 
-## 📂 Project Structure
+| Decision | Reason |
+|---|---|
+| Pure game engine separated from DOM code | Makes every rule and state transition independently testable |
+| Immutable match updates | Prevents hidden side effects between rounds |
+| Injected random value | Allows deterministic computer-choice tests |
+| Local storage for completed results only | Saves useful progress without accounts or personal data |
+| Adaptive strategy based on in-match choices | Demonstrates simple behavioural logic while keeping the game explainable |
 
-bat-ball-stump-game/
-- index.html        → Main HTML file
-- style.css         → Styling
-- script.js         → JavaScript game logic
-- screenshort.png   → screenshort
-- README.md         → this file 
+## Project structure
 
-## 🛠️ Technologies Used
+```text
+.
+├── .github/workflows/quality.yml
+├── css/styles.css
+├── js/
+│   ├── app.js
+│   └── engine.js
+├── tests/engine.test.js
+├── .gitignore
+├── index.html
+├── LICENSE
+├── package-lock.json
+├── package.json
+└── README.md
+```
 
-- HTML5
-- CSS3
-- JavaScript 
+## Run locally
 
-## 👩‍💻 About Me
+Use a local server because the project uses JavaScript modules:
 
-**Kavita** 
-💼 BSc Hons. Computer Science | Delhi University  
-📫 Email: kavita355321@gmail.com  
-📍 New Delhi, India
+```bash
+git clone https://github.com/kavita355321/bat-ball-stump-game.git
+cd bat-ball-stump-game
+npx serve .
+```
+
+## Run tests
+
+Node.js 20 or newer is required.
+
+```bash
+npm ci
+npm test
+```
+
+## Security and privacy
+
+- No API keys, credentials, accounts, analytics or tracking
+- No personal information is collected or transmitted
+- Only completed fictional match scores are stored on the current device
+- Stored history is validated before it is used
+
+## Future improvements
+
+- Add optional two-player local mode
+- Add an explainable post-match strategy summary
+- Add browser-level accessibility testing
+
+## Author
+
+Built by [Kavita](https://github.com/kavita355321) as a JavaScript portfolio project.
 
